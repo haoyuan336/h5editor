@@ -1,0 +1,9 @@
+D:\workspace\h5editor\h5eidtor_windows\h5eidtor_windows\bin\Debug\h5eidtor_windows.exe.config
+D:\workspace\h5editor\h5eidtor_windows\h5eidtor_windows\bin\Debug\h5eidtor_windows.exe
+D:\workspace\h5editor\h5eidtor_windows\h5eidtor_windows\bin\Debug\h5eidtor_windows.pdb
+D:\workspace\h5editor\h5eidtor_windows\h5eidtor_windows\obj\Debug\h5eidtor_windows.csprojResolveAssemblyReference.cache
+D:\workspace\h5editor\h5eidtor_windows\h5eidtor_windows\obj\Debug\h5eidtor_windows.Form1.resources
+D:\workspace\h5editor\h5eidtor_windows\h5eidtor_windows\obj\Debug\h5eidtor_windows.Properties.Resources.resources
+D:\workspace\h5editor\h5eidtor_windows\h5eidtor_windows\obj\Debug\h5eidtor_windows.csproj.GenerateResource.Cache
+D:\workspace\h5editor\h5eidtor_windows\h5eidtor_windows\obj\Debug\h5eidtor_windows.exe
+D:\workspace\h5editor\h5eidtor_windows\h5eidtor_windows\obj\Debug\h5eidtor_windows.pdb
