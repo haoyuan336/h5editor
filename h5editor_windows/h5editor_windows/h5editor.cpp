@@ -1,63 +1,86 @@
 #include <Windows.h>
-//先声明以下消息处理函数
-LRESULT CALLBACK MyWindowProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam);
-int CALLBACK WinMain(HINSTANCE hInstance,HINSTANCE hPrvInstance,LPSTR ipCommondLine,int cmdShow) {
-    WCHAR* cln = L"MyApp";
+#define IDM_OPT1 301
+#define IDM_OPT2 302
+HMENU hRoot;
+void CreateMyMenu();
+LRESULT CALLBACK MyWinProce(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam);
+int CALLBACK WinMain(HINSTANCE hInstance,HINSTANCE hPrevInstance,LPSTR cmdLine,int show) {
+    CreateMyMenu();
+     WCHAR*cn = L"MyApp";
     WNDCLASS wc = {};
+    wc.hbrBackground = (HBRUSH)COLOR_WINDOW;
+    wc.lpszClassName = cn;
     wc.hInstance = hInstance;
-    wc.lpszClassName = cln;
-    wc.lpfnWndProc = MyWindowProc;
-    wc.hbrBackground = (HBRUSH)(COLOR_WINDOW + 1);
     wc.style = CS_HREDRAW | CS_VREDRAW;
+    wc.lpfnWndProc = (WNDPROC)MyWinProce;
     RegisterClass(&wc);
-    HWND hMainwind = CreateWindow(
-        cln,
-        L"绘制窗口",
+    HWND hm = CreateWindow(
+        cn,
+        L"我的应用程序",
         WS_OVERLAPPEDWINDOW,
-        20, 12,
-        450, 280,
+        20,
+        15,
+        420,
+        360,
         NULL,
-        NULL,
+        hRoot,
         hInstance,
-        NULL);
-    if (hMainwind == NULL)
+        NULL
+    );
+    if (hm == NULL)
         return 0;
-    ShowWindow(hMainwind, SW_NORMAL);
+    ShowWindow(hm,show); 
     MSG msg;
-    while (GetMessage(&msg,NULL,0,0))
+  while (GetMessage(&msg,NULL,0,0))
     {
         TranslateMessage(&msg);
         DispatchMessage(&msg);
     }
     return 0;
 }
-LRESULT CALLBACK MyWindowProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam) {
+LRESULT CALLBACK MyWinProce(HWND hwnd, UINT msg, WPARAM wParam,LPARAM lParam) {
     switch (msg)
     {
-    case WM_PAINT: 
+    case WM_COMMAND:
     {
-        PAINTSTRUCT ps;
-        BeginPaint(hwnd, &ps);
-        SetTextColor(ps.hdc, RGB(10, 0, 255));
-        DrawText(ps.hdc, L"朋友,你好.", wcslen(L"朋友,你好."), &(ps.rcPaint), DT_CENTER);
-
-        int arr1[2] = { 45,0 };
-        int arr2[3] = { 30,40,0 };
-        int arr3[2] = { 32,0 };
-        POLYTEXT polys[] = { { 2,2,3,L"大家",ETO_CLIPPED,ps.rcPaint,&arr1[0] },
-        { 2,25,3,L"新年好",ETO_CLIPPED,ps.rcPaint,&arr2[0] },
-        { 30,60,3, L"快乐",ETO_CLIPPED,ps.rcPaint,&arr3[0] } };
-        PolyTextOut(ps.hdc, &polys[0], 3);
-        EndPaint(hwnd, &ps);
+        switch (LOWORD(wParam))
+        {
+        default:
+	  break;
+        }
     }
-	         return 0;
         break;
     case WM_DESTROY:
         PostQuitMessage(0);
         return 0;
     default:
+        return DefWindowProc(hwnd, msg, wParam, lParam);
+
         break;
     }
-    return DefWindowProc(hwnd, msg, wParam, lParam);
+}
+void CreateMyMenu() {
+    hRoot = CreateMenu();
+    if (!hRoot)
+        return;
+    HMENU pop1 = CreatePopupMenu();
+    AppendMenu(hRoot,
+        MF_POPUP,
+        (UINT_PTR)pop1,
+        L"操作");
+    AppendMenu(pop1,
+        MF_STRING,
+        IDM_OPT1,
+        L"飞机");
+    MENUITEMINFO mif;
+    mif.cbSize = sizeof(MENUITEMINFO);
+    mif.cch = 100;
+    mif.dwItemData = NULL;
+    mif.dwTypeData = L"机关枪";
+    mif.fMask = MIIM_ID | MIIM_STRING | MIIM_STATE;
+    mif.fState = MFS_ENABLED;
+    mif.fType = MIIM_STRING;
+    mif.wID = IDM_OPT2;
+    InsertMenuItem(pop1, IDM_OPT2, FALSE, &mif);
 
 }
