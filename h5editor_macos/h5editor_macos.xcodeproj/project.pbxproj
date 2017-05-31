@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A8063A21EDF02AA00FB1CC8 /* SBCollectionItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8063A01EDF02AA00FB1CC8 /* SBCollectionItem.swift */; };
+		2A8063A31EDF02AA00FB1CC8 /* SBCollectionItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A8063A11EDF02AA00FB1CC8 /* SBCollectionItem.xib */; };
 		2AAEFC0A1EDE4DE6005062AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAEFC091EDE4DE6005062AE /* AppDelegate.swift */; };
 		2AAEFC0C1EDE4DE6005062AE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAEFC0B1EDE4DE6005062AE /* ViewController.swift */; };
 		2AAEFC0E1EDE4DE6005062AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2AAEFC0D1EDE4DE6005062AE /* Assets.xcassets */; };
@@ -33,6 +35,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2A8063A01EDF02AA00FB1CC8 /* SBCollectionItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SBCollectionItem.swift; sourceTree = "<group>"; };
+		2A8063A11EDF02AA00FB1CC8 /* SBCollectionItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SBCollectionItem.xib; sourceTree = "<group>"; };
 		2AAEFC061EDE4DE6005062AE /* h5editor_macos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = h5editor_macos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AAEFC091EDE4DE6005062AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2AAEFC0B1EDE4DE6005062AE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -100,6 +104,8 @@
 				2AAEFC0D1EDE4DE6005062AE /* Assets.xcassets */,
 				2AAEFC0F1EDE4DE6005062AE /* Main.storyboard */,
 				2AAEFC121EDE4DE6005062AE /* Info.plist */,
+				2A8063A01EDF02AA00FB1CC8 /* SBCollectionItem.swift */,
+				2A8063A11EDF02AA00FB1CC8 /* SBCollectionItem.xib */,
 			);
 			path = h5editor_macos;
 			sourceTree = "<group>";
@@ -230,6 +236,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2AAEFC0E1EDE4DE6005062AE /* Assets.xcassets in Resources */,
+				2A8063A31EDF02AA00FB1CC8 /* SBCollectionItem.xib in Resources */,
 				2AAEFC111EDE4DE6005062AE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -256,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2AAEFC0C1EDE4DE6005062AE /* ViewController.swift in Sources */,
+				2A8063A21EDF02AA00FB1CC8 /* SBCollectionItem.swift in Sources */,
 				2AAEFC0A1EDE4DE6005062AE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -498,6 +506,7 @@
 				2AAEFC2D1EDE4DE7005062AE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2AAEFC2E1EDE4DE7005062AE /* Build configuration list for PBXNativeTarget "h5editor_macosTests" */ = {
 			isa = XCConfigurationList;
@@ -506,6 +515,7 @@
 				2AAEFC301EDE4DE7005062AE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2AAEFC311EDE4DE7005062AE /* Build configuration list for PBXNativeTarget "h5editor_macosUITests" */ = {
 			isa = XCConfigurationList;
@@ -514,6 +524,7 @@
 				2AAEFC331EDE4DE7005062AE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

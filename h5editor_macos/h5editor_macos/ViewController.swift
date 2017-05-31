@@ -9,21 +9,41 @@
 import Cocoa
 let on = 1//开
 let off = 0//关
-class ViewController: NSViewController {
-    var num = 1
-    @IBOutlet weak var nameDield: NSTextField!
-    @IBOutlet weak var ageComboBox: NSComboBox!
-    @IBOutlet weak var radioMan: NSButton!
-    @IBOutlet weak var radioWoman: NSButton!
-    @IBOutlet weak var subButton: NSButton!
-    @IBOutlet weak var showInfoLabel: NSTextField!
+class ViewController: NSViewController,NSTextFieldDelegate {
+
+
     
+    @IBOutlet weak var inputMessage: NSTextField!
+    @IBOutlet weak var collectionView: NSCollectionView!
+    let reuse = "reuseItem"
+    var data:[String] = ["张三","李四","王五","小六"]
+    var item = SBCollectionItem();
     override func viewDidLoad() {
         super.viewDidLoad()
+        inputMessage.delegate = self
+        collectionView.register(forDraggedTypes: [reuse])
+        inputMessage.becomeFirstResponder()
+        
+//        inputMessage.becomeFirstResponder();
         // Do any additional setup after loading the view.
-        addComboItem();
+
     }
 
+    @IBAction func add(_ sender: Any) {
+        addMessage();
+    }
+    func addMessage(){
+        if !inputMessage.stringValue.isEmpty{
+//            data.append(inputMessage.stringValue)
+            let indexPath = NSIndexPath.init(forItem: data.count - 1,inSection: 0)
+//            collectionView.insertItems(at: [indexPath as IndexPath])
+//            collectionView.scrollToItems(at: [indexPath as IndexPath], scrollPosition: .bottom)
+//            collectionView.reloadItems(at: [indexPath as IndexPath])
+            collectionView.insertItems(at: [indexPath as IndexPath])
+            inputMessage.stringValue = ""
+            
+        }
+    }
     override var representedObject: Any? {
         didSet {
         // Update the view, if already loaded.
@@ -31,39 +51,8 @@ class ViewController: NSViewController {
     }
 
     
-    @IBAction func mainRadio(_ sender: Any) {
-        if (radioWoman.state == on){
-            radioWoman.state = off;
-        }
-        radioMan.state = on;
-    }
-   
-    @IBAction func womanRadio(_ sender: Any) {
-        if radioMan.state == on
-        {
-            radioMan.state = off;
-        }
-        radioWoman.state = on;
-    }
-    func sexValue()-> String {
-        if radioMan.state == on{
-            return "男"
-        }else{
-            return "女"
-        }
-    }
-
-    @IBAction func subButton(_ sender: Any) {
-        showInfoLabel.stringValue = "姓名:" + nameDield.stringValue + "\n" + "年龄:" + ageComboBox.stringValue + "\n" + "性别:" + sexValue()
-    }
-    func addComboItem(){
-        repeat{
-            ageComboBox.addItem(withObjectValue: num);
-            num+=1;
-        }while num <= 50;
-        ageComboBox.stringValue = "25";
-        
-    }
+    
+    
 
 }
 
