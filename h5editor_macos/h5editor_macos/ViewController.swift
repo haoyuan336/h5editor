@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class ViewController: NSViewController,NSTextFieldDelegate {
+class ViewController: NSViewController,NSTextFieldDelegate,NSAlertDelegate {
     var airports = ["YYZ": "Toronto Pearson","DUB": "Dublin"];
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +27,11 @@ class ViewController: NSViewController,NSTextFieldDelegate {
     
     
     
+    @IBOutlet weak var helloButton: NSButton!
+    @IBAction func showAlert(_ sender: Any) {
+        
+    
+    }
 
 }
 

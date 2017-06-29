@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>cocoaSwiftStudio.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 		<key>h5editor_macos.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -12,6 +17,21 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>2A818FCA1F05016D002D1C38</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>2A818FDD1F05016E002D1C38</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>2A818FE81F05016E002D1C38</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>2AAEFC051EDE4DE6005062AE</key>
 		<dict>
 			<key>primary</key>
