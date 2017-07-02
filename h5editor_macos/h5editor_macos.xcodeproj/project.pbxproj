@@ -835,6 +835,7 @@
 				2A818FF11F05016E002D1C38 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2A818FF71F05016E002D1C38 /* Build configuration list for PBXNativeTarget "cocoaSwiftStudioTests" */ = {
 			isa = XCConfigurationList;
@@ -843,6 +844,7 @@
 				2A818FF31F05016E002D1C38 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2A818FF81F05016E002D1C38 /* Build configuration list for PBXNativeTarget "cocoaSwiftStudioUITests" */ = {
 			isa = XCConfigurationList;
@@ -851,6 +853,7 @@
 				2A818FF51F05016E002D1C38 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2AAEFC011EDE4DE6005062AE /* Build configuration list for PBXProject "h5editor_macos" */ = {
 			isa = XCConfigurationList;

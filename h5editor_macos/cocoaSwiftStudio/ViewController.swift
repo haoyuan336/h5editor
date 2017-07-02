@@ -7,7 +7,6 @@
 //
 
 import UIKit
-
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
@@ -22,6 +21,13 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var helloButton: UIButton!
     @IBAction func alert(_ sender: Any) {
+        let alert = UIAlertController(title: "Alert", message: "Hello ,World!",preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Close",style: UIAlertActionStyle.default,handler: nil))
+//        self.presentedViewController(alert,animated: true,completion:nil)
+        self.helloButton.setTitle("Clicked", for: UIControlState.normal)
+        print("hello world button")
+//        alert.show(self, sender: nil)
+        self.show(alert, sender: nil)
     }
 
 }
