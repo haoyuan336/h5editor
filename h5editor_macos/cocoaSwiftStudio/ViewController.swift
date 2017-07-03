@@ -8,10 +8,20 @@
 
 import UIKit
 class ViewController: UIViewController {
+    @IBOutlet weak var imageView: UIImageView!
 
+    var dynamicAnimator = UIDynamicAnimator()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        dynamicAnimator = UIDynamicAnimator(referenceView: self.view)
+        let gravityBehavior = UIGravityBehavior(items: self.imageView);
+        dynamicAnimator.addBehaviotgravityBehavior)
+        
+        let collsionBehavior = UICollisionBehavior(items: self.imageView)
+        collsionBehavior.translateReferenceBoundsIntoBoundary = true
+        dynamicAnimator.addBehavio(collsionBehavior)
     }
 
     override func didReceiveMemoryWarning() {
@@ -19,16 +29,6 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    @IBOutlet weak var helloButton: UIButton!
-    @IBAction func alert(_ sender: Any) {
-        let alert = UIAlertController(title: "Alert", message: "Hello ,World!",preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "Close",style: UIAlertActionStyle.default,handler: nil))
-//        self.presentedViewController(alert,animated: true,completion:nil)
-        self.helloButton.setTitle("Clicked", for: UIControlState.normal)
-        print("hello world button")
-//        alert.show(self, sender: nil)
-        self.show(alert, sender: nil)
-    }
 
 }
 
