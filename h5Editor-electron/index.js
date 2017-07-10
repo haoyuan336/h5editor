@@ -3,6 +3,7 @@
  */
 window.onload = function () {
   console.log('window onload');
+  document.appendChild("<h1>大家好</h1>");
 
 
 
