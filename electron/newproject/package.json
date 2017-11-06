@@ -1,0 +1,14 @@
+{
+  "name": "newproject",
+  "version": "1.0.0",
+  "description": "A electron application",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^1.7.9"
+  }
+}

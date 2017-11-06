@@ -1,0 +1,16 @@
+.div-main{
+    background-color: #757575;
+    width: 400px;
+    height: 400px;
+    border-color: #000000;
+    border: 1px solid;
+
+}
+.div-top{
+    background-color: #489ff0;
+    float: left;
+    width: 49%;
+    border: 1px solid;
+    border-color: #a1a1a1;
+    
+}

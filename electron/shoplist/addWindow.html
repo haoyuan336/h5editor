@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <title>Add Shoppint List Item</title>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+</head>
+<body>
+    <form>
+        <div>
+            <label>Enter Label</label>
+            <input type="text" id="Item" autofocus>
+        </div>
+        <button type="submit">add Item</button>
+    </form>
+    <script>
+        const electron = require("electron");
+        const {ipcRenderer} = electron;
+        const form = document.querySelector("form");
+        form.addEventListener('submit', submintForm)
+        function submintForm(e) {
+            e.preventDefault();
+            const item = document.querySelector("#Item").value;
+            ipcRenderer.send('item:add', item);
+        }
+    </script>
+</body>
+</html>

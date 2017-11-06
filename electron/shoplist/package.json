@@ -1,0 +1,14 @@
+{
+  "name": "shopinglist",
+  "version": "1.0.0",
+  "description": "Shopping liost desktop app",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "ChuHaoyuan",
+  "license": "ISC",
+  "dependencies": {
+    "electron": "^1.7.9"
+  }
+}

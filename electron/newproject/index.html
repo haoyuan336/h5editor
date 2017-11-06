@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SysInfoApp</title>
+    <link rel="stylesheet" href="https://bootswatch.com/darkly/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>SysInfoApp</h1>
+        <div id="output"></div>
+    </div>
+</body>
+<script>
+        console.log(process);
+        let output = `
+        <h2 class='page-header'> App Version Data</h2>
+        <ul class='list-group'>
+            <li class='list-group-item'>Node: ${process.versions.node}<li>
+            <li class='list-group-item'>Chrome: ${process.versions.chrome}<li>
+            <li class='list-group-item'>Electron: ${process.versions.electron}<li>
+                
+        </ul>
+        <ul class='list-group'>
+            <li class='list-group-item'>System Architecture: ${process.arch}s<li>
+            <li class='list-group-item'>Processor Indentifier: ${process.env.PROCESSOR_INDENTIFIER}<li>
+            <li class='list-group-item'>Electron: ${process.env.PRINTER}<li>
+                
+        </ul>
+        <h2  class="page-header">System mem</h2>
+        <ul class='list-group'>
+            <li class='list-group-item'>: ${process.arch}s<li>
+            <li class='list-group-item'>Processor Indentifier: ${process.env.PROCESSOR_INDENTIFIER}<li>
+            <li class='list-group-item'>Electron: ${process.env.PRINTER}<li>
+                
+        </ul>
+        `;
+            document.getElementById("output").innerHTML = output;
+    </script>
+    <script>
+        require("./renderer.js")
+    </script>
+</html>

@@ -1,0 +1,14 @@
+{
+  "name": "test2",
+  "version": "1.0.0",
+  "description": "a  electron app",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "electron": "^1.7.9"
+  }
+}
