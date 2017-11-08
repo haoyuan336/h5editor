@@ -1,17 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <style>
+        *{margin:0;padding:0;}
+        /* ul,ol,li{list-style: none;} */
+    </style>
    <title>Test</title>
-
+   <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js">
+   </script>
    <link rel="stylesheet" type="text/css" href="test.css">
 </head>
 <body>
-    <div class="div-main">
-        <div class="div-top">层级管理器</div>
-        <div class="div-top">        </div>
-        <div class="div-down">你好</div>
+    <p id="text">0</p>;
+    <button id="button">open dev tool</button>
+    <script >
+        $(document).ready(function(){
+            $('#button').click(function(){
+                console.log('button click');
+                let electron = require("electron");
+                let {ipcRenderer} = electron;
+                ipcRenderer.send("open_dev_tool");
+            })
+        })
+    </script>
+    <div id="warp">
+        <ul>
+           <li class="li1"></li>
+           <label class="lab1">1</label>
+           <li class="li2"></li>
+           <label class="lab2">2</label>
+           <li class="li3"></li>
+        </ul>
     </div>
+    <script>
+        $(document).ready(function(){
+            let labBtn = $("#warp").find('label');
+            let warpWidth = $("#warp").width();
+            let isDargging = false;
+            let clickX, leftOffset,inx,nextW2,nextW;
+            labBtn.bind('mousedown', function(){
+                console.log("mouse down");
 
+                isDargging = true;
+                inx = $(this).index("label");
+                $("#text").text("点击的button = " + inx);
+                leftOffset = $(this).index("label");
+            });      
+    
+            document.onmousemove = function(e){
+                if (isDargging){
+                    clickX = e.pageX;
+                    console.log("click x = " + clickX);
+                    // $('#text').text("鼠标位置" + clickX);
+                    labBtn.eq(inx).css('left', clickX - 7 - leftOffset + 'px');//移动按钮
+                    
+                }
+            }
+            $(document).mouseup(function(e){
+                isDargging = false;
+                e.cancelBubble = true;
+                console.log("mouse up");
+            })
+        });
+    </script>
+    
 </body>
 
 </html>
