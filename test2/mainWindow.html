@@ -35,6 +35,7 @@
     <script>
         $(document).ready(function(){
             let labBtn = $("#warp").find('label');
+            let lis = $('warp').find('li');
             let warpWidth = $("#warp").width();
             let isDargging = false;
             let clickX, leftOffset,inx,nextW2,nextW;
@@ -44,15 +45,37 @@
                 isDargging = true;
                 inx = $(this).index("label");
                 $("#text").text("点击的button = " + inx);
-                leftOffset = $(this).index("label");
+                leftOffset = $("#warp").offset().left;
+                console.log("left offset" + leftOffset);
             });      
     
             document.onmousemove = function(e){
                 if (isDargging){
+                    // console.log("labBtn.length = " + labBtn.length);
+                    // clickX = e.pageX;
+                    // console.log("click x = " + clickX);
+                    // // $('#text').text("鼠标位置" + clickX);
+                    // labBtn.eq(inx).css('left', clickX - 7 - leftOffset + 'px');//移动按钮
+                    // labBtn.eq(inx).prev().width(clickX + 'px');
+                    // // let nextLabelx = labBtn.eq(inx + 1).offset().left;
+                    // // console.log("next label x = " + nextLabelx);
+                    // labBtn.eq(inx).next().width(labBtn.eq(inx + 1).offset().left - clickX + 'px');
+
                     clickX = e.pageX;
-                    console.log("click x = " + clickX);
-                    // $('#text').text("鼠标位置" + clickX);
-                    labBtn.eq(inx).css('left', clickX - 7 - leftOffset + 'px');//移动按钮
+                    labBtn.eq(inx).css('left', clickX + 'px'); 
+
+                    if (inx === 0){
+                        //左按钮
+                        labBtn.eq(inx).prev().width(labBtn.eq(inx).offset().left + 'px');
+                        labBtn.eq(inx).next().width(labBtn.eq(inx + 1).offset().left -  labBtn.eq(inx).offset().left  + 'px');
+                    }else{
+                        //右按钮
+                        labBtn.eq(inx).prev().width(clickX - labBtn.eq(inx - 1).offset().left + 'px');
+                        labBtn.eq(inx).next().width((warpWidth - labBtn.eq(inx).offset().left) + 'px');
+                    }
+
+
+                    
                     
                 }
             }

@@ -1,0 +1,15 @@
+{
+  "name": "niuniuserver",
+  "version": "1.0.0",
+  "description": "",
+  "main": "account_server.js",
+  "scripts": {
+    "start": "node account_server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.2",
+    "mysql": "^2.15.0"
+  }
+}
