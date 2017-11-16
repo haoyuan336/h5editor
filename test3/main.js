@@ -7,7 +7,7 @@ app.on("ready", function(){
    mainWindow = new BrowserWindow({
        width: 800,
        height: 800,
-       minWidth: 400,
+       minWidth: 600,
        minHeight: 400
    });
     mainWindow.loadURL(url.format({
@@ -15,6 +15,7 @@ app.on("ready", function(){
         protocol: "file:",
         slashes: true
     }));
+  mainWindow.webContents.openDevTools();
 
 
 });

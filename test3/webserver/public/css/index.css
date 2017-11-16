@@ -1,27 +1,40 @@
-body,div,dl,dt,dd,ul,li,h1,h2,h3,h4,h5,h6,input,form,a,p,textarea{
+body,html,div{
     margin: 0;
     padding: 0;
-    font-family:Helvetica,"Helvetica Neue",Arial, sans-serif;
 }
-ol,ul,li{
-    list-style: none;
+.window-header{
+    margin: 0 auto;
+    width: 100%;
+    height: 6%;
+    background: #686875;
 }
-a{
-    text-decoration: none;
-    display: block;
+/*.window-header .header-middle{*/
+    /*margin: 0 auto;*/
+/*}*/
+.window-body{
+    margin: 0 auto;
+    width: 100%;
+    height: 88%;
+    background: #7b7b88;
 }
-img{
-    border: none;
-    display: block;
+.window-body .body-window{
+    float: left;
+    width: 32%;
+    height: 100%;
+    border-style: solid;
+    border-color: #d3d3e4;
 }
-.clearfloat{
-    zoom: 1;
+.window-body .body-drag-bar{
+    float: left;
+    width: 5px;
+    height: 100%;
+    background: #750200;
+}
+.window-footer{
+    margin-bottom: 0;
+    width: 100%;
+    height: 6%;
+    background: #686875;
+}
 
-}
-.clearfloat:after{
-    display: block;
-    clear: both;
-    content: "";
-    visibility: hidden;
-    height: 0;
-}
+
