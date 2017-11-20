@@ -1,16 +1,42 @@
-.div-main{
-    background-color: #757575;
-    width: 400px;
-    height: 400px;
-    border-color: #000000;
-    border: 1px solid;
-
+#warp{
+    width: 600px;
+    height: 150px;
+    margin: 0px;
+    position: relative;
+    clear: both;
+    background: #0cc;
 }
-.div-top{
-    background-color: #489ff0;
+#warp li{
+    width: 200px;
     float: left;
-    width: 49%;
-    border: 1px solid;
-    border-color: #a1a1a1;
-    
+    height: 150px;
+    background: #ccc;
+    overflow: hidden;
+    text-align: center;
+    line-height: 50px;
+}
+#warp li.li1{
+    background: #777;
+}
+#warp li.li2{
+    background: #ccc;
+}
+#warp li.li3{
+    background: #999;
+}
+#warp label{
+    float: left;
+    width: 10px;
+    height: 150px;
+    position: absolute;
+    cursor: e-resize;
+    background: #0cc;
+}
+#warp label.lab1{
+    left: 190px;
+    background: #f00;
+}
+#warp label.lab2{
+    left: 390px;
+    background: #ff0;
 }
